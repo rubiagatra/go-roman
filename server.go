@@ -16,11 +16,11 @@ func main() {
 		urlPathElements := strings.Split(r.URL.Path, "/")
 		if urlPathElements[1] == "roman_number" {
 			number, _ := strconv.Atoi(strings.TrimSpace(urlPathElements[2]))
-			if number == 0 || number > 0 {
+			if number == 0 || number > 10 {
 				w.WriteHeader(http.StatusNotFound)
-				w.Write([]byte("404 - not found"))
+				w.Write([]byte("404 - Not Found"))
 			} else {
-				fmt.Fprint(w, "%q", html.EscapeString(romannumerals.Numerals[number]))
+				fmt.Fprint(w, "", html.EscapeString(romannumerals.Numerals[number]))
 			}
 		} else {
 			w.WriteHeader(http.StatusBadRequest)

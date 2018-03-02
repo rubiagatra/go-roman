@@ -2,6 +2,7 @@
 
 package romannumerals
 
+// Numerals should be exported
 var Numerals = map[int]string{
 	10: "X",
 	9:  "IX",
@@ -12,5 +13,5 @@ var Numerals = map[int]string{
 	4:  "IV",
 	3:  "III",
 	2:  "II",
-	1:  "1",
+	1:  "I",
 }
